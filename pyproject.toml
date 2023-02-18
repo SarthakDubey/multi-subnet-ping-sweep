@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "multi-subnet-ping-sweep"
+version = "0.1.0"
+description = "Python tool to ping sweep available IPs in multiple subnets and return status"
+authors = ["Sarthak Dubey <sarthak.dubey123@gmail.com>"]
+readme = "README.md"
+packages = [{include = "multi_subnet_ping_sweep"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+asyncio = "^3.4.3"
+mock = "^5.0.1"
+asynctest = "^0.13.0"
+aioretry = "^5.0.2"
+pytest = "^7.2.1"
+pylint = "^2.16.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
