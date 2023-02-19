@@ -25,7 +25,7 @@ def main(assigned_args: list = None):
     multi_subnet_ping_sweep.EXCEPTIONS = args.exceptions
     # Call the main function with the command line arguments as keyword arguments
     try:
-        multi_subnet_ping_sweep.two_subnet_ping_sweep(
+        multi_subnet_ping_sweep.sweep_two(
             subnet1=args.subnet1,
             subnet2=args.subnet2,
             retries=args.retries,

@@ -1,11 +1,11 @@
-import logging
+from loguru import logger
 import re
 from ipaddress import ip_network, IPv4Address, AddressValueError
 from typing import List
 
 from aioretry import RetryInfo, RetryPolicyStrategy
 
-logger = logging.getLogger(__name__)
+
 RETRY_POLICY = 1
 
 
@@ -65,7 +65,7 @@ def int_to_subnet_ip(subnet: ip_network, octet: int) -> IPv4Address:
         ip_addr = IPv4Address(".".join(subnet_split))
         return ip_addr
     except AddressValueError:
-        logger.warning(f"Octet 256 (> 255) not permitted. Given {octet}")
+        logger.warning(f"Subnet: {subnet} - Octet {octet} (> 255) not permitted.")
 
 
 def retry_policy(info: RetryInfo) -> RetryPolicyStrategy:
