@@ -35,7 +35,7 @@ async def ping(host: IPv4Address, shared_results: Dict[str, bool], asyncio_lock:
     is_alive = proc.returncode == 0
     async with asyncio_lock:
         shared_results[str(host)] = is_alive
-        logger.info(f"Writing ping response from {host}")
+        # logger.info(f"Writing ping response from {host}")
 
 
 # @logger.catch
